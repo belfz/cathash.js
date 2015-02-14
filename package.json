@@ -1,0 +1,32 @@
+{
+  "name": "cathash",
+  "version": "0.1.0",
+  "description": "Ultra light (dependency-free) implementation of hashtable utilizing the hash function. Use String type as a key in the key-value pairs.",
+  "main": "cathash.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belfz/cathash.js.git"
+  },
+  "keywords": [
+    "hashtable",
+    "cathash",
+    "hashmap",
+    "hash"
+  ],
+  "author": "Marcin Baraniecki <marcinbar1@gmail.com> (http://github.com/belfz)",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+  },
+  "bugs": {
+    "url": "https://github.com/belfz/cathash.js/issues"
+  },
+  "homepage": "https://github.com/belfz/cathash.js",
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "mocha": "^2.1.0"
+  }
+}
