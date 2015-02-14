@@ -1,6 +1,6 @@
 {
   "name": "cathash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ultra light (dependency-free) implementation of hashtable utilizing the hash function. Use String type as a key in the key-value pairs.",
   "main": "cathash.js",
   "scripts": {
