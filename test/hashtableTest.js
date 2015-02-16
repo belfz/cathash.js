@@ -39,4 +39,30 @@ describe('CatHash unit test', function(){
 		var retrieved1 = instance.find(key1);
 		should.not.exist(retrieved1);
 	});
+
+	it('increases the size while elements are added', function(){
+		instance.put(key1, value1);
+		var size = instance.size();
+		size.should.equal(1);
+	});
+
+	it('decreases the size while elements are removed', function(){
+		instance.put(key1, value1);
+		instance.put(key2, value2);
+		instance.remove(key1);
+		var size = instance.size();
+		size.should.equal(1);
+	});
+
+	it('returns true if contains key', function(){
+		instance.put(key1, value1);
+		var contains = instance.containsKey(key1);
+		contains.should.equal(true);
+	});
+
+	it('returns false if does not contain key', function(){
+		instance.put(key1, value1);
+		var contains = instance.containsKey(key2);
+		contains.should.equal(false);
+	});
 });

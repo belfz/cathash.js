@@ -1,5 +1,6 @@
 function CatHash(){
 	var table = [];
+	var elemCount = 0;
 
 	var hashIt = function(key){
 		verifyKeyType(key);
@@ -15,6 +16,23 @@ function CatHash(){
 		if(typeof key !== 'string'){
 			throw new Error('Key must be a string!');
 		}
+	};
+
+	this.containsKey = function(key){
+		var hash = hashIt(key);
+		var row = table[hash];
+
+		if(!row){
+			return false;
+		}
+
+		for(var i = 0; i < row.length; i++){
+			if(row[i].key === key){
+				return true;
+			}
+		}
+		
+		return false;
 	};
 
 	this.put = function(key, value){
@@ -36,6 +54,7 @@ function CatHash(){
 		}
 
 		table[hash].push(obj);
+		elemCount++;
 	};
 
 	this.find = function(key){
@@ -56,12 +75,18 @@ function CatHash(){
 		for(var i = 0; i < values.length; i++){
 			if(values[i].key === key){
 				values.splice(i, 1);
+				elemCount--;
+				return;
 			}
 		}
 	};
 
 	this.print = function(){
 		console.log(table);
+	};
+
+	this.size = function(){
+		return elemCount;
 	};
 };
 
